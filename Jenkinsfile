@@ -19,17 +19,17 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                sh 'mvn clean install -Pjenkins'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                sh 'mvn test -Pjenkins'
             }
         }
         stage('Code Coverage') {
             steps {
-                sh 'mvn jacoco:report'
+                sh 'mvn jacoco:report -Pjenkins'
             }
         }
         stage('Publish Test Results') {
