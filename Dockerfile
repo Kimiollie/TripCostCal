@@ -11,7 +11,7 @@ COPY pom.xml /app/
 COPY . /app/
 
 # Package the application using Maven
-RUN mvn package
+RUN mvn package -Pdocker
 
 # Run the main class from the built JAR
 CMD ["java", "-jar", "target/tripcostcal.jar"]
